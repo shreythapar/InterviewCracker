@@ -1,0 +1,1185 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100italic,200,20%E2%80%A6lic,300,300italic,regular,italic,600,600italic,700,700italic,900,900italic');
+
+.top_first{
+font-family: 'Montserrat' ;
+position: absolute;
+top: 40px;
+left: 160px;
+text-decoration: none;
+}
+.top_first a{
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}
+.top_first:hover{
+color: gray;
+}
+
+.top_second{
+font-family: 'Montserrat';
+position: absolute;
+top: 40px;
+left: 240px;
+}
+.top_second a{
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}
+.top_second:hover{
+color: gray;
+}
+
+.himalyas{
+position: relative;
+height:730px ;
+width:1500px;
+top: 0px;
+left: 0px;
+}
+
+.icon{
+position:absolute;
+top: 20px;
+left: 30px;
+width: 80px;
+height: 80px;
+}
+
+.top_third{
+font-family: 'Montserrat';
+position: absolute;
+top: 40px;
+left: 330px;
+}
+.top_third a{
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}
+.top_third:hover{
+    color: gray;
+}
+
+.top_fourth{
+font-family: 'Montserrat';
+position: absolute;
+top: 40px;
+left: 450px;    
+}
+.top_fourth a{
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}
+.top_fourth:hover{
+color: gray;
+}
+
+.top_fifth{
+font-family: 'Montserrat';
+position: absolute;
+top: 40px;
+left: 580px;    
+}
+.top_fifth a{
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+} 
+.top_fifth:hover{
+color: gray;
+}
+
+*{
+box-sizing: border-box;
+}
+
+.Pic{
+float: left;
+width: 49%;
+margin-top: 17px;
+}
+
+#Info{
+padding: 0 150px;
+position: relative;
+background-color:rgb(247, 233, 218);
+margin-top: 17px;
+margin-left: 8px;
+text-align: center;
+font-size: 15px;
+font-family: 'Montserrat';
+float: left;
+width: 49%;
+bottom: 0px;
+height: 492px;
+}
+
+#Info h1{
+position: relative;
+top: 50px;
+}
+
+#Info p{
+position: relative;
+font-size: 14px;
+top:50px;
+}
+
+#Info h3{
+    position: relative;
+    font-size: 11px;
+    top: 30px;
+    font-weight:550;
+    font-style: italic;
+    margin: 10px;
+}
+
+#Info button{
+    position: relative;
+    top: 65px;
+    font-size: 10px;
+    border-color: black;
+    background-color: rgb(247, 233, 218);
+    font-family: 'Montserrat';
+    padding:14px;
+}
+
+#Info button:hover{
+    background-color: gray;
+}
+
+.Book{
+    position: relative;
+    float: right;
+    width: 49%;
+    margin-left: 5px;
+    margin-top: 17px;
+    margin-right: 22px;
+    height:500px;
+    width: 737px;; 
+}
+
+.Info1{
+position: relative;
+background-color:rgb(247, 233, 218);
+margin-top: 17px;
+text-align: center;
+font-size: 15px;
+font-family: 'Montserrat';
+float: left;
+width: 49%;
+height: 500px;
+}
+
+.Info1 h1{
+position: relative;
+top: 50px;
+}
+
+.Info1 p{
+position: relative;
+font-size: 14px;
+top: 50px;
+}
+
+.Info1 h3{
+    position: relative;
+    font-size: 11px;
+    top: 30px;
+    font-weight:550;
+    font-style: italic;
+    margin: 10px;
+}
+
+.Info1 button{
+    position: relative;
+    top: 65px;
+    font-size: 10px;
+    border-color: black;
+    background-color: rgb(247, 233, 218);
+    font-family: 'Montserrat';
+    padding:14px;
+}
+
+.Info1 button:hover{
+    background-color: gray;
+} 
+
+.L1{
+    position: relative;
+    margin-top: 20px;
+    float: left;
+    width: 25%;
+    left:345px;
+}
+
+.L1 h1{
+    position: absolute;
+    font-family: 'Montserrat';
+}
+
+.L1 h4{
+    position: relative;
+    left: -16px;
+    font-weight: 549;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    top: 35px;
+}
+
+.L2{
+    position: relative;
+    margin-top: 20px;
+    float: left;
+    width: 50%;
+    left: 175px;
+}
+
+.L2 h1{
+    position: absolute;
+    font-family: 'Montserrat';
+}
+
+.L2 h4{
+    position: relative;
+    left: -30px;
+    font-weight: 549;
+    font-style: italic;
+    top: 35px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.L3{
+    position: relative;
+    margin-top: 20px;
+    right:400px;
+    float: right;
+    margin-right: 110px;
+}
+
+.L3 h1{
+    position: absolute;
+    font-family: 'Montserrat';
+}
+
+.L3 h4{
+    position: relative;
+    left: -10px;
+    font-weight: 549;
+    font-style: italic;
+    top: 35px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.L4{
+    position: relative;
+    margin-top: 20px;
+    float: right;
+    right: 450px;
+}   
+
+.L4 h1{
+    position: absolute;
+    font-family: 'Montserrat';
+}
+
+.L4 h4{
+    position: relative;
+    left: -30px;
+    font-weight: 549;
+    font-style: italic;
+    top: 35px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.imac{
+    position: relative;        
+    float: left;
+    width: 49%;
+    margin-top: 37px;
+    height:500px;
+    width:740px;
+}
+
+#Info2{
+    position: relative;
+    background-color:rgb(247, 233, 218);
+    margin-top: 37px;
+    margin-left: 8px;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Montserrat';
+    float: left;
+    width: 49%;
+    bottom: 0px;
+    height: 500px;
+}
+    
+#Info2 h1{
+    position: relative;
+    top: 50px;
+}
+
+#Info2 p{
+    position: relative;
+    font-size: 14px;
+    top:50px;
+}
+
+#Info2 h3{
+    position: relative;
+    font-size: 11px;
+    top: 30px;
+    font-weight:550;
+    font-style: italic;
+    margin: 10px;
+}
+
+#Info2 button{
+    position: relative;
+    top: 65px;
+    font-size: 10px;
+    border-color: black;
+    background-color: rgb(247, 233, 218);
+    font-family: 'Montserrat';
+    padding:14px;
+}
+
+#Info2 button:hover{
+    background-color: grey;
+}
+#afin{
+    background-color:rgb(247, 233, 218);
+    margin-top: 17px;
+    margin-left: 1px;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Montserrat';
+    float: left;
+    width: 32%;
+    height: 370px;
+}
+
+#afin:hover{
+    background-color:rgb(248, 237, 237);
+}
+
+#afin img{
+    position: relative;
+    top: 30px;
+    
+}
+
+#afin h1{
+    position: relative;
+    font-size:38px;
+    top: 42px;
+}
+
+#afin p{
+    position: relative;
+    font-size: 14px;
+    top:30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.bfin{
+    background-color:rgb(247, 233, 218);
+    margin-top: 17px;
+    margin-left: 19px;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Montserrat';
+    float: left;
+    width: 32%;
+    height: 370px;
+}
+
+.bfin:hover{
+    background-color:rgb(237, 248, 237);
+}
+
+.bfin img{
+    position: relative;
+    top: 30px;
+}
+
+.bfin h1{
+    position: relative;
+    font-size:38px;
+    top: 55px;
+}
+
+.bfin p{
+    position: relative;
+    font-size: 14px;
+    top:40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.cfin{
+    background-color:rgb(247, 233, 218);
+    margin-top: 17px;
+    margin-left: 19px;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Montserrat';
+    float: left;
+    width: 32%;
+    height: 370px;
+}
+
+.cfin:hover{
+    background-color:rgb(229, 231, 250);
+}
+
+.cfin img{
+    position: relative;
+    top: 30px;
+}
+
+.cfin h1{
+    position: relative;
+    font-size:38px;
+    top: 55px;
+}
+
+.cfin p{
+    position: relative;
+    font-size: 14px;
+    top:40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.client{
+    top:22px; 
+    left: 30px; 
+    padding-top: 20px;
+    float:left;
+    width: 100%;
+    text-align: center;
+}
+
+.client h1{
+    top:26px;
+    position: relative; 
+    font-family: 'Montserrat';
+}
+
+.client h4{
+    top:100px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 550;
+}
+
+.client p{
+    font-size: 15px;
+    font-family: 'Montserrat';
+    font-style: italic;
+}
+
+/* Grid-1 */
+.grid1{
+    float: left;
+    width: 24%;
+    text-align: left;
+    position: relative;
+    margin-top: 17px;
+    width:370px;
+    font-family: 'Montserrat';
+    height: 270px;
+}
+.grid1 h1{
+    position: relative;
+}
+.grid1 h4{
+    position: relative;
+    bottom: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 550;
+    font-size: 14px;
+}
+.grid1 p{
+    font-size: 15px;
+}
+
+/* Grid-2 */
+#grid2{
+    float: left;
+    width: 48%;
+    margin-top: 17px;
+    margin-left: 3px;
+    width:370px;
+    height: 270px;
+}
+
+/* Grid-3 */
+.grid3{
+    float: left;
+    width: 72%;
+    margin-top: 17px;
+    margin-left: 3px;
+    width:370px;
+    height: 270px;
+}
+
+/* Grid-4 */
+.grid4{
+    float: left;
+    width: 96%;
+    margin-top: 17px;
+    margin-left: 3px;
+    width:370px;
+    height: 270px;
+}
+
+/* Grid-5 */
+.grid5{
+    float: left;
+    width: 24%;
+    margin-top: 5px;
+    width:370px;
+    height: 270px;    
+}
+
+/* Grid-6 */
+.grid6{
+    float: left;
+    width: 48%;
+    margin-left: 3px;
+    margin-top: 5px;
+    width:370px;
+    height: 270px;    
+}
+
+/* Grid-7 */
+.grid7{
+    float: left;
+    width: 72%;
+    margin-left: 3px;
+    margin-top: 5px;
+    width:370px;
+    height: 270px;    
+}
+
+/* Grid-8 */
+.grid8{
+    float: left;
+    width: 72%;
+    margin-left: 3px;
+    margin-top: 5px;
+    width:370px;
+    height: 270px;    
+}
+/* Letter */
+.letter{
+    top:22px; 
+    padding-top: 20px;
+    float:left;
+    width: 100%;
+    text-align: center;
+}
+.letter h1{
+    top:26px;
+    position: relative; 
+    font-size: 28;
+    font-family: 'Montserrat';
+}
+.letter h4{
+    top:100px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 550;
+}
+
+form{
+    text-align: center;
+}
+#og{
+    position: relative;
+    top: 70px;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: bold;
+}
+#name{
+    position: relative;
+    height: 25px;
+    width: 500px;
+    top: 75px;
+}
+
+#oga{
+    position: relative;
+    top: 116px;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: bold;
+}
+#email{
+    position: relative;
+    /* margin-left: 614px; */
+    height: 25px;
+    width: 500px;
+    top: 121px;
+}
+
+#ogb{
+    position: relative;
+    /* margin-left: 730px; */
+    top: 170px;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: bold;
+}
+#review{
+    position: relative;
+    height: 25px;
+    width: 500px;
+    top: 175px;
+}
+
+#ogc{
+    position: relative;
+    top: 225px;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    padding: 18px;
+    background-color: white;
+    border-color: black;
+    width: 120px;
+}
+
+#ogc:hover{
+    background-color: gray;
+}
+
+@media only screen and (max-width: 413px){
+    
+    /* 600px  */
+    /* body{
+        background-color: greenyellow;
+    } */
+    html,body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }    
+
+    .himalyas{
+        position: relative;
+        width: 394px;
+        height: 200px;
+    }
+    
+    .icon{
+        position:absolute;
+        top: 15px;
+        left: 15px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .top_first{
+        position: absolute;
+        top: 17px;
+        left: 70px;
+    }
+
+    .top_first a{
+        font-size: small;
+    }
+
+    .top_second{
+        position: absolute;
+        top: 17px;
+        left: 130px;
+    }
+
+    .top_second a{
+        font-size: small;
+    }
+
+    .top_third{
+        position: absolute;
+        top: 17px;
+        left: 200px;
+    }
+
+    .top_third a{
+        font-size: small;
+    }
+
+    .top_fifth{
+        position: absolute;
+        top: 17px;
+        left: 300px;
+    }
+
+    .top_fifth a{
+        font-size: small;
+    }
+
+    .top_fourth{
+        display: none;
+    }
+
+    /* 1 Layer */
+    
+    .Pic{
+        float: left;
+        margin-top: 8px;
+        height: 235px; 
+        width: 193px;
+    }
+
+    #Info{
+        margin-top: 8px;
+        margin-left: 0px;
+        float:right;
+        height: 235px;
+        width: 193px;
+        padding: 4px;
+        position: relative;
+    }
+    #Info h1{
+        position: relative;
+        top: 13px;
+        font-size: 13px;
+    }
+    #Info h3{
+        position: relative;
+        font-size: 6px;
+        top: 0px;
+    }
+    #Info p{
+        position: relative;
+        font-size: 7px;
+        top:0px;
+        padding: 2px;
+        }
+    #Info button{
+        position: relative;
+        top: 9px;
+        font-size: 8px;
+        padding:8px;
+    }
+    
+    /* 2nd Layer */
+    
+    .Book{
+        position: relative;
+        float: right;
+        width: 49%;
+        margin-left: 5px;
+        margin-top: 10px;
+        margin-right: 2px;
+        height: 235px;
+        width: 193px; 
+    }
+    .Info1{
+        position: relative;
+        margin-top: 10px;
+        float: left;
+        width: 49%;
+        height: 235px;
+        width: 193px;
+        padding: 4px;
+    }
+    .Info1 h1{
+        position: relative;
+        top: 13px;
+        font-size: 13px;
+    }
+    .Info1 h3{
+        position: relative;
+        font-size: 6px;
+        top: 0px;
+    }
+    .Info1 p{
+        position: relative;
+        font-size: 7px;
+        top: 0px;
+        padding: 2px;
+    }
+    .Info1 button{
+        position: relative;
+        top: 9px;
+        font-size: 8px;
+        padding:8px;
+    }
+    /* Independant stats */
+    .L1{
+        position: relative;
+        margin-top: 16px;
+        float: left;
+        width: 25%;
+        left:70px;
+    }
+    
+    .L1 h1{
+        position: absolute;
+        left: 0px;
+    }
+    
+    .L1 h4{
+        position: relative;
+        left: 0px;
+        top: 42px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 11px;
+    }
+    .L2{
+        position: relative;
+        margin-top: 16px;
+        float: left;
+        width: 25%;
+        right: 0px;
+    }
+    .L2 h1{
+        position: absolute;
+    }
+    
+    .L2 h4{
+        position: relative;
+        left: 6px;
+        top: 43px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 11px;
+    }
+    .L3{
+        position: relative;
+        margin-top: 95px;
+        float: left;
+        width: 25%;
+        left:77px;
+        margin-right: 0px;
+    }
+    .L3 h1{
+        position: absolute;
+    }
+    .L3 h4{
+        position: relative;
+        left: 0px;
+        top: 44px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 11px;
+    }
+    .L4{
+        position: relative;
+        margin-top: 95px;
+        float: left;
+        width: 25%;
+        right:227px;
+    }
+    .L4 h1{
+        position: absolute;
+    }
+    .L4 h4{
+        position: relative;
+        left: 0px;
+        top: 44px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 11px;
+    }
+
+    .imac{
+        margin-top: 67px;
+        height: 235px;
+        width: 193px;
+    }
+    
+    #Info2{
+        position: relative;
+        margin-top: 67px;
+        margin-left: 8px;
+        height: 235px;
+        width: 193px;
+        padding: 4px;
+    }
+        
+    #Info2 h1{
+    position: relative;
+    top: 13px;
+    font-size: 13px;
+    }
+    
+    #Info2 p{
+    position: relative;
+    font-size: 7px;
+    top:0px;
+    padding: 2px;
+    }
+    
+    #Info2 h3{
+        position: relative;
+        font-size: 6px;
+        top: 0px;
+    }
+
+    #Info2 button{
+        position: relative;
+        top: 9px;
+        font-size: 8px;
+        padding:8px;
+    }
+
+    /* 1 out of 3 */
+    #afin{
+        margin-top: 14px;
+        margin-left: 1px;
+        float: left;
+        width: 100%;
+        height: 206px;
+    }
+    #afin img{
+        position: relative;
+        top: 0px;
+        float: right;
+        height:80px;
+        width:90px;
+        padding-right: 18px;
+        padding-top: 18px;
+    }
+    #afin h1{
+        position: relative;
+        font-size:26px;
+        top: 10px;
+        left: 20px;
+        text-align: left;
+    }
+    #afin p{
+        position: relative;
+        font-size: 12px;
+        top: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    /* 2 out of 3 */
+    .bfin{
+        margin-top: 14px;
+        margin-left: 1px;
+        float: left;
+        width: 100%;
+        height: 206px;
+    }
+    .bfin img{
+        position: relative;
+        top: 0px;
+        float: right;
+        height:80px;
+        width:110px;
+        padding-right: 18px;
+        padding-top: 18px;
+    }
+    .bfin h1{
+        position: relative;
+        font-size:26px;
+        top: 10px;
+        left: 20px;
+        text-align: left;
+    }
+    .bfin p{
+        position: relative;
+        font-size: 12px;
+        top: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    /* 3 out of 3 */
+    .cfin{
+        margin-top: 14px;
+        margin-left: 1px;
+        float: left;
+        width: 100%;
+        height: 206px;
+    }
+    .cfin img{
+        position: relative;
+        top: 0px;
+        float: right;
+        height:80px;
+        width:110px;
+        padding-right: 18px;
+        padding-top: 18px;
+    }
+    .cfin h1{
+        position: relative;
+        font-size:26px;
+        top: 10px;
+        left: 20px;
+        text-align: left;
+    }
+    .cfin p{
+        position: relative;
+        font-size: 12px;
+        top: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    /* Client akela */
+    .client{
+        top:0px; 
+        left: 30px;
+        padding: 0%;
+        float:left;
+        width: 100%;
+        text-align: center;
+        font-size: 10px;
+    }
+    .client h4{
+        position: relative;
+        top:8px;
+    }
+    
+    .client p{
+        font-size: 8px;
+    }
+    .grid1{
+        float: left;
+        /* background-color: honeydew; */
+        width: 48%;
+        text-align: left;
+        position: relative;
+        margin-top: 17px;
+        height: 152px;
+    }
+    .grid1 h1{
+        position: relative;
+        top: 3px;
+        font-size: 13px;
+    }
+    .grid1 h4{
+        position: relative;
+        top: -6px;
+        font-size: 6px;
+    }
+    .grid1 p{
+        position: relative;
+        font-size: 7px;
+        top: 0px;
+        padding:0px;
+    }
+    #grid2{
+        float: left;
+        width: 48%;
+        margin-top: 17px;
+        margin-left: 3px;
+        height: 152px;
+    }
+    .grid3{
+        float: left;
+        width: 47%;
+        margin-left: -1px;
+        margin-top: 8px;
+        height: 152px;
+    }
+    .grid4{
+        float: right;
+        width: 48%;
+        margin-top: 8px;
+        margin-right: 13px;
+        height: 152px;
+    }
+    .grid5{
+        float: left;
+        width: 47%;
+        margin-left: -1px;
+        margin-top: 8px;
+        height: 152px;
+    }
+    .grid6{
+        display: none;
+    }
+    .grid7{
+        float: right;
+        width: 48%;
+        margin-top: 8px;
+        margin-right: 13px;
+        height: 152px;
+    }
+    .grid8{
+        display: none;
+    }
+
+    .letter{
+        position: relative;
+        font-size: 10px;
+    }
+    .letter h1{
+        top: 16px;
+    }
+    
+    /* Reviews */
+
+    #og{
+        position: relative;
+        top: 20px;
+        font-family: 'Montserrat';
+        font-size: 18px;
+        font-weight: bold;
+    }
+    #name{
+        position: relative;
+        height: 25px;
+        width: 250px;
+        top: 25px;
+    }
+    
+    #oga{
+        position: relative;
+        /* margin-left: 730px; */
+        top: 66px;
+        font-family: 'Montserrat';
+        font-size: 18px;
+        font-weight: bold;
+    }
+    #email{
+        position: relative;
+        /* margin-left: 614px; */
+        height: 25px;
+        width: 250px;
+        top: 71px;
+    }
+    
+    #ogb{
+        position: relative;
+        /* margin-left: 730px; */
+        top: 120px;
+        font-family: 'Montserrat';
+        font-size: 18px;
+        font-weight: bold;
+    }
+    #review{
+        position: relative;
+        height: 25px;
+        width: 250px;
+        top: 125px;
+    }
+    
+    #ogc{
+        position: relative;
+        top: 175px;
+        font-family: 'Montserrat';
+        font-size: 12px;
+        padding: 18px;
+        background-color: white;
+        border-color: black;
+        width: 90px;
+    }
+}

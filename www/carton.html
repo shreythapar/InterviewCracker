@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartons Rearrangement</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="buddy">
+    <div class="blog">
+        <h2>Problem</h2>
+        <p>
+            Your school has ordered some equipment that has been delivered in a number of very heavy cartons. 
+            Each carton has a serial number and the cartons are all lined up in a row. Unfortunately, your 
+            teacher asked for the cartons to be placed in a particular sequence and you forgot to tell the 
+            people who unloaded the cartons about this. You now have to quickly restore the cartons to the 
+            correct order before the teacher comes and sees how you have messed up her instructions.
+            Since the cartons are very heavy, you cannot carry them over long distances. In each step, all 
+            you can do is to exchange the position of two adjacent cartons. For instance, suppose the serial 
+            numbers on the cartons in the order in which they are unloaded are 34, 29, 12, 78 and 90 and the 
+            order in which the cartons were supposed to be arranged is 90, 29, 78, 34, 12. These cartons can 
+            be rearranged in the desired order with 7 exchanges, as follows:
+        </p>
+        <ul>
+            <li>Exchange 78, 90 — 34, 29, 12, 90, 78</li> 
+            <li>Exchange 12, 90 — 34, 29, 90, 12, 78</li> 
+            <li>Exchange 34, 29 — 29, 34, 90, 12, 78 </li>
+            <li>Exchange 12, 78 — 29, 34, 90, 78, 12</li>    
+            <li>Exchange 34, 90 — 29, 90, 34, 78, 12</li>
+            <li>Exchange 29, 90 — 90, 29, 34, 78, 12</li> 
+            <li>Exchange 34, 78 — 90, 29, 78, 34, 12</li>
+        </ul>
+        <p>
+            In this example, it can be shown that 7 exchanges are needed to reorder the cartons as desired.
+            Clearly, you want to get the job done with minimum eﬀort. Given the initial arrangement of the 
+            cartons and the ﬁnal sequence that the teacher wants, your goal is to compute the minimum number 
+            of exchanges required to rearrange the cartons in the desired order.
+        </p>
+        <h2>Input</h2>
+        <p>
+            The ﬁrst line of input is a single integer N, the total number of cartons. The second line consists 
+            of N distinct positive integers, separated by spaces, denoting the serial numbers of the N cartons 
+            in the order in which they were unloaded. The third line is another sequence of N integer, denoting 
+            the desired order in which the N cartons should be rearranged. The sequence of numbers in the third 
+            line is guaranteed to be a permutation of the sequence in the second line.
+        </p>
+        <h2>Output</h2>
+        <p>
+            The output should be a single integer, the minimum number of exchanges required to achieve the desired 
+            sequence of cartons.
+        </p>
+        <h2>Constraints</h2>
+        <p>
+            1 ≤ N ≤ 10<sup>5</sup>
+        </p>
+        <h2>Approach</h2>
+        <p>
+            The aim of our algorithm is to find the number of steps it would take for the student to re-arrange the 
+            cartons back in the order as per the teacher’s instructions (in the above example: 34 29 12 78 90). We 
+            start by enquiring the user about the number of cartons in the problem, (here, 5). We would now ask the 
+            user to first enter the arrangement in which the student would have unloaded the cartons. The next input 
+            received would be that of the correct arrangement (in the above example: 90 29 78 34 12), which would 
+            obviously be a permutation of the above-mentioned arrangement. On receiving both the above mentioned 
+            arrangements, we proceed to storing them in their respective arrays – unordered[] and ordered[] with the 
+            former for the wrong arrangement and latter for the correct ones.
+        </p>
+        <p>
+            While filling the array “ordered[]”, we store all the elements of the array on the values corresponding to 
+            that of their indexes, i.e., element “90” would be stored at position,  90. Because of which the values in 
+            the array would be scattered and the size which it would require would also be massive, though, the usage 
+            of the space would be very scarce, thus increasing the over space complexity of the algorithm but improving 
+            the time complexity because of the reduction in the number of iterations.
+        </p>
+        <p>
+            All the elements are scanned using a nested for loop. This would help us in checking for every combination 
+            possible amongst the arrangements. On comparing the elements, an “if-condition” is setup wherein we check for 
+            every element of the array “ordered” being placed ahead with respect to its next element. If the condition is 
+            satisfied, the two elements are scanned. Meanwhile, a counter is implemented in the “if-condition”, keeping a 
+            count of the number of times the “if-condition” is executed.
+            So as seen above, we display the counter at the end of the execution of the code signifying the number of minimum 
+            number of exchanges required to rearrange the cartons in the desired order.
+
+        </p>
+        <h2>Alogirthm</h2>
+        <ol>
+            <li>Print ("Enter the number of cartons")</li>
+            <li>Input N</li>
+            <li>Print ("Enter the arrangement in which cartons are unloaded")</li>
+            <li>for i = 0 to N</li>
+            <li>&ensp; Input a[i]</li>
+            <li>Print ("Enter the arrangement in which cartons should have been arranged")</li>
+            <li>for i to N</li>
+            <li>&ensp;&ensp;Input val</li>
+            <li>&ensp;&ensp;arr[val] equals i</li>
+            <li>for i = 0 to N - 1</li>
+            <li>&ensp;&ensp;for j = 0 to N-1-i</li>
+            <li>&ensp;&ensp;&ensp;&ensp;if arr[a[j]] is greater than arr[a[j+1]] then</li>
+            <li>&ensp;&ensp;&emsp;&emsp;swap(a[j] and a[j+1])</li>
+            <li>&ensp;&ensp;&emsp;&emsp;count = count + 1</li>
+            <li>Print("Count")</li>
+        </ol>
+        <h2>Code</h2>
+        <h6><u>CPP14</u></h6>
+        <code class="code">
+            #include < iostream >
+            <br>
+                using namespace std;
+            <br>    
+                int main()
+            <br>
+                {
+            <br>
+                //n-Variable stores size of array
+            <br>
+                //val-Variable stores correct positions in //array
+            <br>    
+                //count-Variable counts number of //rearranegments required
+            <br>
+                int n,val,count = 0; 
+            <br>         
+                cout<<"Please enter the number of cartons" << endl;
+            <br>
+                cin>>n;
+            <br>        
+                //Array stores unordered and ordered positions //respectively
+            <br>    
+                int unordered[n],ordered[1001];
+            <br>
+                cout<<"Enter the order in which the cartons were kept before the teacher's instruction" << endl;
+            <br>
+                //Loop for taking unordered positions of //cartons
+            <br>
+                for(int i = 0;i < n;i++){
+            <br>
+                &emsp;&emsp;cin >> unordered[i];
+            <br>
+                }
+            <br>
+                cout<<"Enter the order in which the cartons were kept after the teacher's    instruction"<< endl;
+            <br>
+                //Loop for taking ordered positions of cartons
+            <br>
+                //Using positions as indexes of array and key //as index
+            <br>
+                for(int i = 0;i < n;i++){
+            <br>
+                &emsp;&emsp;cin >> val;
+            <br>
+                &emsp;&emsp;ordered[val] = i;
+            <br>
+                }
+            <br>
+                //Loop for finding the correct positions by //comparing the 2 arrays
+            <br>
+                for(int i =0;i < n - 1;i++){
+            <br>
+                &emsp;&emsp;for(int j = 0;j < n- i -1;j++){
+            <br>
+                //Condition to check for the unordered elements //being placed ahead in the ordered 
+            <br>
+                //arrangement w.r.t it's successive carton
+            <br>
+                &ensp;&ensp;&ensp;&ensp;&ensp;if (ordered[unordered[j]]>ordered[unordered[j+1]]){
+            <br>    
+                &emsp;&emsp;&emsp;&emsp;int t = unordered[j];
+            <br>
+                &emsp;&emsp;&emsp;&emsp;unordered[j] = unordered[j+1];
+            <br>
+                &emsp;&emsp;&emsp;&emsp;unordered[j+1] = t;
+            <br>
+                &emsp;&emsp;&emsp;&emsp;count++;
+            <br>
+                &emsp;&emsp;&emsp;}
+            <br>
+                &emsp;}
+            <br>
+                }
+            <br>
+                //Displaying the number of steps for the //rearrangements
+            <br>
+                cout << count <<"\n";
+            <br>
+                return 0;
+            <br>
+            }
+            <br /><br />
+        </code>
+        <h2>Sample Input</h2>
+            <p>5</p>
+            <p>34 29 12 78 90</p>
+            <p>90 29 78 34 12</p>
+        <h2>Sample Output</h2>
+            <p>7</p>
+        <h2>Verification</h2>
+        <img src="blog1.jpeg" alt="Blog1" height="100%" width="100%">
+    </div> 
+</body>
+</html>

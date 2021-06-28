@@ -1,0 +1,160 @@
+.container{
+    text-align: center;
+    margin-top: 55%;
+}
+.card-body,card-title,card-text{
+    background-color:beige;
+}
+
+h2{
+    color: black;
+    background-color: bisque;
+}
+
+#footer {
+    text-align: center;
+    position: fixed;
+    /* right: 1.7%; */
+    width: 100%;
+    color: white;
+    bottom: 1%;
+}
+
+.buddy{
+    margin: 0;
+    background-color:#000000;
+        
+}
+
+.blog{
+    color: white;
+    text-align: justify;
+    padding: 0 1.5em 0 1.5em;
+}
+
+.code{
+    color: white;
+}
+
+.hr{
+    border-top: 2px solid white;
+}
+
+span{
+    background-color: bisque;
+    color: black;
+}
+
+.head{
+    text-align: center;
+    position: absolute;
+    left: 1.7%;
+    top: 3%;
+    width: 100%;
+    padding: 0 1.5em;
+    color: white;
+}
+
+#par{
+    margin-left: 8%;
+    margin-right: 8%;
+    text-align: justify;
+}
+/* 
+a:hover{
+    opacity: 0.5;
+} */
+/* 
+a{
+    transition: background-color 0.2s ;  
+} */
+/* 
+#growing {
+    transition: background-color 0.2s;
+    /* transition-delay: 2s; */
+/* } */ */
+/* 
+#growing:hover{
+    background-color: bisque;
+    /* display: none;*/
+} */
+
+#grow { 
+    transition: 0.75s;
+}
+
+#grow:hover{
+    border-style: solid;
+    border-color: white;
+    border: radius 10px;
+    box-shadow: 15px 20px 10px white;
+}
+/* .head{
+    background-color: #090a08;
+    }
+.main{
+    background-color: #aad6b7;
+    opacity: 0.9;
+    height: 100%;
+    width: 100%;
+}
+nav{
+    float: right;
+    right: 0px auto;
+    margin-top: 14rem;
+    margin-right: 1rem;
+}
+a{
+    text-decoration: none;
+    color: #5c5a0efa;
+}
+.ihead {
+        margin-left: 10 rem auto;
+        margin-right: auto;
+        height: 250px;
+        width: 190px;
+    }
+img:hover {
+        box-shadow: 0 0 2px 1px #0582acb0;
+    }
+.ibody{
+    display: inline-block;
+    float: right;
+    margin-right: 18rem;
+    top: 500px;
+    height: 180px;
+    width: 150px;
+} */
+/* .iach{
+    display: inline-block;
+    float: right;
+    margin-right: 15rem;
+    height: 550px;
+    width: 450px;
+}
+.aboutlist{
+    list-style-type: none;
+}
+.achlist{
+    justify-content: center;
+}
+hr{
+    width:300;
+    align: fit-content;
+}
+ol{
+    list-style-type: upper-roman;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    }
+th, td {
+    padding: 5px;
+    text-align: left;
+    }
+form {
+    text-align: center;
+    margin: 20px;
+    border: 2px black solid;
+} */

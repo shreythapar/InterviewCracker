@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights Out</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="buddy">
+    <div class="blog">
+        <h2>Problem</h2>
+        <p>
+            Johnny is playing Lights Out, an electronic game consisting of an NxN grid of lights. Initially, each 
+            light may be on or off. Pressing a light will toggle it and the lights non-diagonally adjacent to it.<br>
+            The object of the game is to try and get all the lights turned off. It is not always possible, and what's 
+            more, Johnny's game is faulty. Pressing some lights has no effect. (They can still be turned on and off if 
+            they are next to working lights.)<br> Help Johnny write a program that checks whether a puzzle can be solved or 
+            not, given the initial description of the grid and the positions of the faulty lights.
+        </p>
+        <h2>Input</h2>
+        <p>
+            The first line contains a number t (about 10), the number of test cases. Each test case has the following form:<br>
+            The first line contains two numbers N and K (2 <= N <= 200, 0 <= K <= N). Each line in the next N lines contains 
+            N characters '0' or '1' representing the initial state of the grid. '1' denotes a light that is on and '0' a light 
+            that is off.<br> Each line in the next K lines contains 2 integers, i and j (1 <= i, j <= N), representing the row 
+            and column of a faulty light. Rows are numbered from the top and columns from the left.
+        </p>
+        <h2>Output</h2>
+        <p>
+            For each test case, print YES if there is a solution, otherwise print NO.
+        </p>
+        <h2>Approach</h2>
+        <p>
+            There is a game in which we have a nxn grid with lights. Changing state of one light changes state of its 4 nearest 
+            neighbors. But there are few faulty lights in this grid, for them changing their state doesn’t change state of its 
+            nearest neighbors. At the end we want to turn off all the lights in the grid. 
+        </p>
+        <p>
+            We start by taking inputs as directed in the question, we make a structure with two fields one is state (Boolean) 
+            stores state of light (on or off) and another condition (character) stores condition of light (‘w’-working, ‘f’-faulty). 
+            Then we take input for all lights in the grid and assign their condition and we take position of faulty light and change 
+            its condition from previously taken input.
+        </p>
+        <p>
+            We will three functions:
+            <br>Solve: it is center function that solves the grid if it can be solved. We check few conditions in this function to solve the grid.
+            <br>Changestate: it changes the state of light in focus and its 4 nearest neighbors.
+            <br>Adjacent: it checks if at least two neighbors of light in focus have their state as ‘on’.    
+            <br>Now, in solve function we will start with first light and check if its state is ‘on’ and it is in working condition, 
+            then we check if changing its state changes state of at least two ‘on’ neighbors. If all conditions are true, we call changestate 
+            function and change state of its neighbors. This procedure is repeated for light in every row and when we reach the last 
+            row we stop. In this approach we have used backtracking approach with modification as we check if sufficient neighbors are 
+            affected by the change then only, we go for it otherwise, we move to other light.
+
+        </p>
+        <h2>Algorithm</h2>
+        <ol>
+            <li>Structure (Boolean state and char condition)</li>
+            <li>Boolean function adjacent {</li>
+            <li>&emsp;If (state of at least 2 neighboring lights is on)</li>
+            <li>&emsp;&emsp;Return true</li>
+            <li>&emsp;Else </li>
+            <li>&emsp;&emsp;Return false} </li>
+            <li>Function changestate {</li>
+            <li>&emsp;Change state of light in focus</li>
+            <li>&emsp;Change state of its non-diagonal neighbors</li>
+            <li>&emsp;If (state is on)</li>
+            <li>&emsp;&emsp;Change to off</li>
+            <li>&emsp;Else </li>
+            <li>&emsp;&emsp;Change to on}</li>
+            <li>Function solve {</li>
+            <li>&emsp;If i is less than grid size</li>
+            <li>&emsp;&emsp;For j = 0 to n</li>
+            <li>&emsp;&emsp;&emsp;If light is on and is working</li>
+            <li>&emsp;&emsp;&emsp;&emsp;We check adjacent</li>
+            <li>&emsp;&emsp;&emsp;&emsp;&emsp;Changestate of lights</li>
+            <li>&emsp;&emsp;i = i +1;</li>
+            <li>&emsp;&emsp;recursive call solve}</li>
+            <li>Function main {</li>
+            <li>&emsp;Input t</li>
+            <li>&emsp;While t > 0</li>
+            <li>&emsp;&emsp;Input n and k</li>
+            <li>&emsp;&emsp;Declare 2-dimensional structure</li>
+            <li>&emsp;&emsp;Initialize counter to 0</li>
+            <li>&emsp;&emsp;Input 2-d structure</li>
+            <li>&emsp;&emsp;Input coordinates of faulty light</li>
+            <li>&emsp;&emsp;Call function solve</li>
+            <li>&emsp;&emsp;if state of all lights is off</li>
+            <li>&emsp;&emsp;&emsp;print yes</li>
+            <li>&emsp;&emsp;else</li>
+            <li>&emsp;&emsp;&emsp;print no}</li>
+        </ol>
+        <h2>Code</h2>
+        <code class="code">
+            &emsp;    #include < iostream >
+            <br>
+            &emsp;    using namespace std;
+            <br>
+            &emsp;    #define N 200
+            <br>
+            &emsp;    struct game
+            <br>
+            &emsp;    {
+            <br>
+            &emsp;&emsp;        bool state; char cond;
+            <br>
+            &emsp;    };
+            <br>
+            &emsp;    //function that checks for adjacent lights that are on
+            <br>
+            &emsp;    bool adj(struct game arr[N][N],int i,int j,int n){
+                <br>
+            &emsp;&emsp;        int count=0; //counter variable
+            <br>
+            &emsp;&emsp;        if(i!=0&&arr[i-1][j].state==1) count++;
+            <br>
+            &emsp;&emsp;        if(i!=n&&arr[i+1][j].state==1) count++;
+            <br>
+            &emsp;&emsp;        if(j!=0&&arr[i][j-1].state==1) count++;
+            <br>
+            &emsp;&emsp;        if(j!=n&&arr[i][j+1].state==1) count++;
+            <br>
+            &emsp;&emsp;        if(count>=2) return true; //if at least two adjacent lights are switched on
+            <br>
+            &emsp;&emsp;        else return false;    //we return true else false
+            <br>
+            &emsp;    }
+            <br>
+            &emsp;    //function that changes current state of light
+            <br>
+            &emsp;    void changestate(struct game arr[N][N],int i,int j,int n)
+            <br>
+            &emsp;    {
+                <br>
+            &emsp;&emsp;        arr[i][j].state=0;
+            <br>
+            &emsp;&emsp;        if(arr[i-1][j].state==1) arr[i-1][j].state=0;
+            <br>
+            &emsp;&emsp;        else if(arr[i-1][j].state==0) arr[i-1][j].state=1;
+            <br>
+            &emsp;&emsp;        if(arr[i+1][j].state==1) arr[i+1][j].state=0;
+            <br>
+            &emsp;&emsp;        else if(arr[i+1][j].state==0) arr[i+1][j].state=1;
+            <br>
+            &emsp;&emsp;        if(arr[i][j-1].state==1) arr[i][j-1].state=0;
+            <br>
+            &emsp;&emsp;        else if(arr[i][j-1].state==0) arr[i][j-1].state=1;
+            <br>
+            &emsp;&emsp;        if(arr[i][j+1].state==1) arr[i][j+1].state=0;
+            <br>
+            &emsp;&emsp;        else if(arr[i][j+1].state==0) arr[i][j+1].state=1;
+            <br>
+            &emsp;    }
+            <br>
+            &emsp;    //function that solves the game using above functions
+            <br>
+            &emsp;    void solve(struct game arr[N][N],int i,int n)
+            <br>
+            &emsp;    {
+                <br>
+            &emsp;&emsp;        if(i< n){// base case for recursive calling
+                <br>
+            &emsp;&emsp;&emsp;        for(int j=0;j< n;j++)  //loop for checking light in each row
+            <br>
+            &emsp;&emsp;&emsp;        {
+                <br>
+            &emsp;&emsp;&emsp;&emsp;            if(arr[i][j].state==1&&arr[i][j].cond=='w')
+            <br>
+            &emsp;&emsp;&emsp;&emsp;            {
+                <br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;                if(adj(arr,i,j,n))
+            <br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;                    {
+                <br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;                        changestate(arr,i,j,n);
+            <br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;                    }
+            <br>
+            &emsp;&emsp;&emsp;&emsp;            }
+            <br>
+            &emsp;&emsp;&emsp;        } solve (arr,i+1,n);
+            <br>
+            &emsp;    }
+            <br>
+            &emsp;     }
+            <br>
+            &emsp;    int main()
+            <br>
+            &emsp;    {
+                <br>
+            &emsp;        short t,count=0,n,k,a,b; //variable that stores test cases
+            <br>
+            &emsp;        cin>>t;    //taking inputs as directed in question
+            <br>
+            &emsp;        while(t--)
+            <br>
+            &emsp;        {
+                <br>
+            &emsp;&emsp;            cin>>n>>k;
+            <br>
+            &emsp;&emsp;            struct game arr[N][N];        //array to store state of light
+            <br>
+            &emsp;&emsp;            for(int i=0;i< n;i++)         //loop for taking inputs
+            <br>
+            &emsp;&emsp;            {
+                <br>
+            &emsp;&emsp;&emsp;                for(int j=0;j< n;j++)
+            <br>
+            &emsp;&emsp;&emsp;                {
+                <br>
+            &emsp;&emsp;&emsp;&emsp;                    cin>>arr[i][j].state;
+            <br>
+            &emsp;&emsp;&emsp;&emsp;                    arr[i][j].cond='w';
+            <br>
+            &emsp;&emsp;&emsp;                }
+            <br>
+            &emsp;&emsp;            }
+            <br>
+            &emsp;&emsp;            for(int i=0;i< k;i++) //applying constraint as given in question
+            <br>
+            &emsp;&emsp;            {
+                <br>
+            &emsp;&emsp;&emsp;                cin>>a>>b;
+            <br>
+            &emsp;&emsp;&emsp;                arr[a-1][b-1].cond='f';
+            <br>
+            &emsp;&emsp;            }
+            <br>
+            &emsp;&emsp;            solve(arr,0,n);         //calling function
+            <br>
+            &emsp;&emsp;            for(int i=0;i< n;i++)    //loop for verification
+            <br>
+            &emsp;&emsp;&emsp;                for(int j=0;j< n;j++)
+            <br>
+            &emsp;&emsp;&emsp;&emsp;                    if(arr[i][j].state==0) count++;
+            <br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;            (count==(n*n))? cout < < "yes" < < endl:cout < < "no" < < endl;
+            <br>
+            &emsp;        }
+            <br>
+            &emsp;        return 0;
+            <br>
+            &emsp;    }                
+            <br>
+        </code>
+        <h2>Input</h2>
+        <p>
+            2<br>
+            3 1<br>
+            010<br>
+            111<br>
+            010<br>
+            2 2<br>
+            <br>
+            4 2<br>
+            1110<br>
+            1110<br>
+            1001<br>
+            1101<br>
+            2 2<br>
+            4 3<br>
+        </p>
+        <h2>Output</h2>
+        <p>
+            NO<br>
+            YES<br>
+        </p>
+        <h2>Verification</h2>
+        <img src="lights_ver.jpeg" alt="verification" width="100%" height="100%">
+    </div>
+</body>
+</html>

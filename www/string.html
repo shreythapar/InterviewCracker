@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartons Rearrangement</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="buddy">
+    <div class="blog">
+        <h2>Problem</h2>
+        <p>
+            You are given a string S with length N. You may perform the following operation 
+            any number of times: choose a non-empty substring of S (possibly the whole string S)
+            such that each character occurs an even number of times <b>in this substring</b> 
+            and erase this substring from S. (The parts of S before and after the erased 
+            substring are concatenated and the next operation is performed on this shorter 
+            string.)<br />
+            For example, from the string "ac<b>abba</b>d", we can erase the highlighted substring 
+            "abba", since each character occurs an even number of times in this substring. After 
+            this operation, the remaining string is "acd".<br />
+            Is it possible to erase the whole string using one or more operations?<br />
+            Note: <br />A string B is a substring of a string A if B can be obtained from A by 
+            deleting several (possibly none or all) characters from the beginning and several 
+            (possibly none or all) characters from the end.
+        </p>
+        <h2>Input</h2>
+        <p>
+            <ul>
+                <li>The first line of the input contains a single integer T denoting the number 
+                    of test cases. The description of T test cases follows:</li>
+                <ul>
+                    <li>The first line of each test case contains a single integer N.</li>
+                    <li>The second line contains a single string S with length N.</li>
+                </ul>
+            </ul>
+        </p>
+        <h2>Output</h2>
+        <p>
+            For each test case, print a single line containing the string "YES" if it is possible 
+            to erase the whole string or "NO" otherwise (without quotes).
+        </p>
+        <h2>Constraints</h2>
+        <p>
+            <ul>
+                <li>1≤T≤2001≤T≤200
+                <li>1≤N≤1,0001≤N≤1,000</li>
+                <li>S contains only lowercase English letters</li>
+            </ul>
+        </p>
+        <h2>Approach</h2>
+        <p>
+            Now, the aim of the given algorithm is to find the possibility of erasing a string for 
+            a condition, where we choose a substring from the given string and check for each 
+            character having an even number of occurrences. On finding the substring which satisfies 
+            the condition, we erase it from the given string, thus forming a new string. This step 
+            keeps taking place recursively till the string is empty or there are no more possibilities 
+            for the string to deplete any further. So, we start by enquiring the user for the number 
+            of test cases. Next, we move to the size of the string, this step is important as it helps 
+            us in deciding the size of the array which would be made to store the characters of the 
+            string. Finally, the user would enter the string for checking the possibility given above.
+        </p>
+        <p>
+            On receiving the above-mentioned input, we would first make an array of the size “N” of the 
+            given string, “S”. Next up, we fill the array using the characters of the string after which 
+            we call a function, “check ()” passing the string through it. On entering the function, an 
+            empty array is made for storing the frequency of the characters’ occurrences namely, “freq” 
+            having a storage capacity of 26 owing to the letters of the alphabet. After storing the length 
+            of the passed array, “S” in “n”, we make a for loop for scanning all the occurrences of the 
+            characters.In scanning, <span>we scan the ASCII values of each of the characters and subtract the 
+            value from 97, the reason being, 97 is the ASCII value of the first letter of the alphabet, “a”, 
+            so, all the characters in the string would obviously have an ASCII value greater than 96 but less 
+            than 124,</span> owing to the letters of the alphabet being 26. Now, suppose the example we picked us was, 
+            “cabbac”. So the first letter, “c” has an ASCII value of 99, but, since it’s difference between 97 
+            is 2, the value in the 2<sup>nd</sup> element (i.e. 0) of “freq” array would be incremented  by 1, 
+            displaying the number of occurrences of the character. Similarly, for “a”, the 0<sup>th</sup> element 
+            in the “freq” array would be incremented by 1. And, by the end of the scanning of the elements, the 
+            0<sup>th</sup>, 1<sup>st</sup> and 2<sup>nd</sup> position would have a value of 2 owing to two 
+            occurrences of “a”, “b” and “c” respectively. Finally, a for-loop is run for checking for all the 
+            elements in the array, “freq” being divisible by 2, the condition here being that, if even one stored 
+            element is not divisible by 2, the function “check ()” would return false, else, true. So, on returning 
+            false for each condition, we display, “NO” to the user and when true is returned, “YES” is displayed.
+        </p>
+        <h2>Algorithm</h2>
+        <ol>
+            <li>Boolean check (string S)</li>
+            <li>&ensp;&ensp;Int array freq [26] equals 0</li>
+            <li>&ensp;&ensp;Int N equals length of S</li>
+            <li>&ensp;&ensp;For i = 0 to N</li>
+            <li>&ensp;&ensp;&ensp;&ensp;freq[S[i] - 97] = freq[S[i] – 97] +1</li>
+            <li>&ensp;&ensp;For i = 0 to 26</li>
+            <li>&ensp;&ensp;&ensp;&ensp;if freq[i] mod 2 = 1</li>
+            <li>&ensp;&ensp;&ensp;&ensp;return false</li>
+            <li>&ensp;&ensp;return true</li>
+            <li>Function main()</li>
+            <li>&ensp;&ensp;Print “How many test cases would you like to run?”</li>
+            <li>&ensp;&ensp;Input t</li>
+            <li>&ensp;&ensp;For i = 0 to t</li>
+            <li>&ensp;&ensp;&ensp;&ensp;Print “What is the size of the string?”</li>
+            <li>&ensp;&ensp;&ensp;&ensp;Input N</li>
+            <li>&ensp;&ensp;&ensp;&ensp;Print “Enter the string: “</li>
+            <li>&ensp;&ensp;&ensp;&ensp;Input S</li>
+            <li>&ensp;&ensp;&ensp;&ensp;if check function returns true</li>
+            <li>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Print “YES”</li>
+            <li>&ensp;&ensp;&ensp;&ensp;else</li>
+            <li>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Print “NO”</li>
+        </ol>
+        <h2>Code</h2>
+        <h6><u>CPP14</u></h6>
+        <code class="code">
+            #include < iostream >
+            <br /> 
+                using namespace std; 
+            <br />
+                //Function that checks if the string follows
+            <br>
+                //the given criterion (returns true or false)
+            <br>
+                bool check(string s) 
+            <br /> 
+                {
+            <br />
+                //Array which stores the occurences of the //letters
+            <br>
+                &emsp;&emsp;int freq[26] = {0}; 
+            <br />
+                //Variable that stores the length of the string
+            <br>
+                &emsp;&emsp;int n = s.length(); 
+            <br />
+                //Loop for counting the occurences 
+            <br>
+                &emsp;&emsp;for (int i = 0; i < s.length(); i++) 
+            <br /> 
+                &emsp;&emsp;&emsp;&emsp;freq[s[i] - 97]++; 
+            <br />
+                //Loop for verifying even occurence in the //string
+            <br>
+                &emsp;&emsp;for (int i = 0; i < 26; i++) 
+            <br /> 
+                &emsp;&emsp;&emsp;&emsp;if (freq[i] % 2 == 1) 
+            <br /> 
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;return false; 
+            <br /> 
+                &emsp;&emsp;return true; 
+            <br /> 
+                } 
+            <br />        
+                int main()  
+            <br /> 
+                { 
+            <br /> 
+                //Variable for storing the number of test cases
+            <br />
+                &emsp;&emsp;int t;
+            <br />
+                //Loop Variable
+            <br>
+                int i;  
+            <br>
+                &emsp;&emsp;cout<<"How many test cases would you like to &emsp;&emsp;&emsp;&emsp; run?"<< endl;
+            <br /> 
+                &emsp;&emsp;cin>>t;
+            <br />
+                //Loop for taking the inputs from the user
+            <br>
+                &emsp;&emsp;for(i=0;i < t;i++)
+            <br /> 
+                &emsp;&emsp;{
+            <br /> 
+                &emsp;&emsp;&emsp;&emsp;int n;
+            <br /> 
+                &emsp;&emsp;&emsp;&emsp;cout<<"What is the size of the string?"<< &ensp;&emsp;&emsp;&emsp;&emsp;endl;
+            <br /> 
+                &emsp;&emsp;&emsp;&emsp;cin>>n;
+            <br /> 
+                &emsp;&emsp;&emsp;&emsp;string s;
+            <br /> 
+                &emsp;&emsp;&emsp;&emsp;cout<<"Please enter the string: "<< endl;
+            <br /> 
+                &emsp;&emsp;&emsp;&emsp;cin>>s;
+            <br /> 
+                //Calling function "check" for checking the //condition  
+            <br>
+                //Conditional Operators used instead of if-else //statements    
+            <br>
+                &emsp;&emsp;&emsp;&emsp;check(s) ? cout << "YES" << endl :  cout << &emsp;&emsp;&emsp;&emsp; "NO" << endl;
+            <br /> 
+                &emsp;&emsp;}
+            <br /> 
+                &emsp;&emsp;return 0; 
+            <br /> 
+                }
+                <br><br>
+        </code>
+        <h2>Sample Input</h2>
+            <p>3</p>
+            <p>6</p>
+            <p>cabbac</p>
+            <p>7</p>
+            <p>acabbad</p>
+            <p>18</p>
+            <p>fbedfcbdaebaaceeba</p>
+        <h2>Sample Output</h2>
+            <p>YES</p>
+            <p>NO</p>
+            <p>YES</p>
+        <h2>Verification</h2>
+            <img src="string.jpeg" alt="String" width="100%" height="100%">
+    </div> 
+</body>
+</html>
+        

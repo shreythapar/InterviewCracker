@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef and Queries</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="buddy">
+    <div class="blog">
+        <h2>Problem</h2>
+        <p>
+            Chef published a blog post, and is now receiving many queries about it. On day ith, he receives Qi queries. 
+            But Chef can answer at most k queries in a single day.Chef always answers the maximum number of questions 
+            that he can on any given day (note however that this cannot be more than k). The remaining questions (if any) 
+            will be carried over to the next day.Fortunately, after n days, the queries have stopped. Chef would like to 
+            know the first day during which he has some free time, i.e. the first day when he answered less than k questions.
+        </p>
+        <h2>Input</h2>
+        <ul>
+            <li>First line will contain T, the number of testcases. Then the testcases follow.</li>
+            <li>The first line of each testcase contains two space separated integers n and k.</li>
+            <li>The second line of each testcase contains n space separated integers, namely Q1, Q2, ... Qn.</li>
+        </ul>
+        <h2>Output</h2>
+        <p>
+            For each testcase, output in a single line the first day during which chef answers less than kk questions.
+        </p>
+        <h2>Constraints</h2>
+        <ul>
+            <li>1≤T≤1051≤T≤105</li>
+            <li>1≤1≤ sum of n over all testcases ≤105≤105</li>
+            <li>1≤k≤1081≤k≤108</li>
+            <li>0≤Qi≤1080≤Qi≤108</li>
+        </ul>
+        <h2>Subtask</h2>
+        <ul>
+            <li>Subtask 1 - 20% points - Sum of Qi over all testcases and days ≤3.106≤3.106</li>
+            <li>Subtask 2 - 80% points - Original constraints</li>
+        </ul>
+        <h2>Approach</h2>
+        <p>We start the solution by gathering all the required details from the question, like it is mentioned that chef receives 
+            Qi queries every day which indicates we have to make an array. Size of array is n as it is given that after nth day 
+            queries stop, chef can only answer k questions in one day, if any number of questions remain, they should be answered 
+            next day along with fresh queries that come on that day. So, now chef wants to know after which day he would be free 
+            for some time, that is, on which day he would answer less queries than he canso that he can get some time off. 
+        </p>
+        <p>
+            We will start by taking inputs as directed in the question. One approach could be:
+        </p>
+        <p>
+            As I have stated above i.e. by making an array wherein, we can store queries for each day. Answer the maximum number 
+            of queries that we can and pass remaining to next day, that is, we subtract queries that can be answered and add remaining 
+            to next day’s queries.
+        </p>
+        <p>
+            Instead of using an array we could use two temporary variables, one that stores query for that day and second stores copy 
+            of it. We can subtract maximum queries that can be answered on that day from second variable and add the remaining ones. 
+            We use that first temporary variable to take the input for the next day. We use a counter variable to count number of days 
+            for which queries were more than maximum. And keep on subtracting maximum from the variable that is storing remaining number 
+            of queries. 
+        </p>
+        <p>
+            If for any day value of variable is than maximum number of queries that can be answered then this day is the first free day 
+            and we print counter variable’s value. We are using greedy approach, as we check if current day is the free day and then we 
+            move to next day other than taking sum of all queries and then dividing to find the answer.
+        </p>
+        <h2>Algorithm</h2>
+        <ol>
+            <li>Input t</li>
+            <li>While t is greater than 0</li>
+            <li>&emsp; Input n and k</li>
+            <li>&emsp; Initialize temporary(temp) variable to 0</li>
+            <li>&emsp; Initialize counter(count) variable to 0</li>
+            <li>&emsp; For I =0 to n</li>
+            <li>&emsp;&emsp; Input Qi</li>
+            <li>&emsp;&emsp; temp = temp + Qi</li>
+            <li>&emsp;&emsp; If (temp is less than k)</li>
+            <li>&emsp;&emsp;&emsp; Print count</li>
+            <li>&emsp;&emsp;&emsp; Break the loop</li>
+            <li>&emsp;&emsp; Else</li>
+            <li>&emsp;&emsp;&emsp; temp = temp – k</li>
+            <li>&emsp; If (temp is greater than k)</li>
+            <li>&emsp;&emsp; Print (n+(temp+1)/k)</li>
+        </ol>
+        <h2>Code</h2>
+        <code class="code">
+            #include < iostream >
+            <br>
+            &emsp; using namespace std;
+            <br>
+            &emsp;    #define ll long long
+            <br>
+            &emsp;    int main()
+            <br>
+            &emsp;    {
+                <br>
+            &emsp;&emsp;        //t is variable that stores no. of test cases
+            <br>
+            &emsp;&emsp;        int t;
+            <br>
+            &emsp;&emsp;        //n and k are variables that store
+            <br>
+            &emsp;&emsp;        //n - no. of days queries were received
+            <br>
+            &emsp;&emsp;        //k - maximum no. of queries chef can answer in one day
+            <br>
+            &emsp;&emsp;        long long int n,k;
+            <br>
+            &emsp;&emsp;        ll temp,qi,count;
+            <br>
+            &emsp;&emsp;        cin>>t;
+            <br>
+            &emsp;&emsp;        while(t--)
+            <br>
+            &emsp;&emsp;        {
+                <br>
+            &emsp;&emsp;&emsp;            cin>>n>>k;
+            <br>
+            &emsp;&emsp;&emsp;            //temporary variable
+            <br>
+            &emsp;&emsp;&emsp;            temp=0;
+            <br>
+            &emsp;&emsp;&emsp;            for(int i=0;i < n;i++)
+            <br>
+            &emsp;&emsp;&emsp;            {
+                <br>
+            &emsp;&emsp;&emsp;&emsp;                //no. of queries of the day
+            <br>
+            &emsp;&emsp;&emsp;&emsp;                cin>>qi;
+            <br>
+            &emsp;&emsp;&emsp;&emsp;                temp+=qi;
+            <br>
+            &emsp;&emsp;&emsp;&emsp;                //if no. of queries are less than max
+            <br>
+            &emsp;&emsp;&emsp;&emsp;                //this would first free day
+            <br>
+            &emsp;&emsp;&emsp;&emsp;                if(temp < k){
+                <br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;                    cout < < (i+1) < < endl;
+            <br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;                    break;
+            <br>
+            &emsp;&emsp;&emsp;&emsp;                }
+            <br>
+            &emsp;&emsp;&emsp;&emsp;                // we add the remaining queries to next day
+            <br>
+            &emsp;&emsp;&emsp;&emsp;                else
+            <br>
+            &emsp;&emsp;&emsp;&emsp;                {
+                <br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;                    temp-=k;
+            <br>
+            &emsp;&emsp;&emsp;&emsp;                }
+            <br>
+            &emsp;&emsp;&emsp;           }
+            <br>
+            &emsp;&emsp;&emsp;           // still if any no. of queries they will answered on following days
+            <br>
+            &emsp;&emsp;&emsp;           if(temp>k)
+            <br>
+            &emsp;&emsp;&emsp;           {
+                <br>
+            &emsp;&emsp;&emsp;&emsp;                cout< < (n+(temp+1)/k)< < endl;
+            <br>
+            &emsp;&emsp;&emsp;           }
+            <br>
+            &emsp;&emsp;        }
+            <br>
+            &emsp;&emsp;        return 0;
+            <br>
+            &emsp;    }
+            <br>    
+            </code>
+            <h2>Input</h2>
+            <p>
+                2 <br>
+                6 5 <br>
+                10 5 5 3 2 1 <br> 
+                1 1 <br>
+                100 <br>
+            </p>
+            <h2>Output</h2>
+            <p>
+                6 <br>
+                101<br>
+            </p>
+            <h2>Verification</h2>
+            <img src="chef_ver.jpeg" alt="Verification" width="100%" height="100%">
+    </div>
+</body>
+</html>
